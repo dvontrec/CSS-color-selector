@@ -75,7 +75,7 @@ function changeColor()
 	document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
 
 	//if the background is light change the text color to black
-	if(avgColor < 170)
+	if(avgColor < 140)
 	{
 		document.body.style.color = "white";
 	}
