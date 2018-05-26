@@ -46,6 +46,8 @@ function init(){
 		blueVal.innerHTML = this.value;
 		changeColor();
 	}
+
+
 }
 
 
