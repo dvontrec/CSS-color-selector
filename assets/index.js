@@ -70,7 +70,6 @@ function changeColor()
 	var b = parseInt(blue.value);
 	//finds the average of the colors
 	var avgColor = (r+g+b) / 3;
-	console.log(avgColor);
 
 	//changes the background color of the body to match the RGB values
 	document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
