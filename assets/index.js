@@ -70,17 +70,18 @@ function changeColor()
 	var b = parseInt(blue.value);
 	//finds the average of the colors
 	var avgColor = (r+g+b) / 3;
+	console.log(avgColor);
 
 	//changes the background color of the body to match the RGB values
 	document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
 
 	//if the background is light change the text color to black
-	if(avgColor > 180)
+	if(avgColor < 170)
 	{
-		document.body.style.color = "black";
+		document.body.style.color = "white";
 	}
 	//if the background is dark change the text color to white
-	else{document.body.style.color = "white";}
+	else{document.body.style.color = "black";}
 
 }
 
