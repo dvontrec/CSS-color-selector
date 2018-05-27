@@ -3,7 +3,7 @@
 -----------------------------------------------*/
 
 const red = document.getElementById("red")
-var redVal = document.getElementById('red-val')
+var redVal = document.getElementById('red-text')
 const green = document.getElementById("green")
 var greenVal = document.getElementById('green-val')
 const blue = document.getElementById("blue")
@@ -20,33 +20,40 @@ function init(){
 	//calls the changeColor function
 	changeColor();
 	//sets the value of the labels for the colors
-	redVal.innerHTML = red.value;
+	redVal.value = red.value;
 	greenVal.innerHTML = green.value;
 	blueVal.innerHTML = blue.value;
 
-	//as the red value changes change the text of the label.
-	red.oninput = function()
-	{
-		//sets the label text to the value
-		redVal.innerHTML = this.value;
-		//calls the change color 
-		changeColor();
-	}
+	//creates a collection of objects to hold the color controller
+	const colorController = [
+		{
+			//sets the color slider of the object to the global variable
+			colorSlider: red,
+			//sets the color value object to the global variable
+			colorVal: redVal
+		},
+		{
+			colorSlider: green,
+			colorVal: greenVal
+		},
+		{
+			colorSlider: blue,
+			colorVal: blueVal
+		}
+	]
 
-	//as the green value changes change the text of the label.
-	green.oninput = function()
+	//loops through the collection of colorController objects so lines of code are not repeated.
+	colorController.forEach(function(controller)
 	{
-		greenVal.innerHTML = this.value;
-		changeColor();
-	}
-
-	//as the blue value changes change the text of the label.
-	blue.oninput = function()
-	{
-		blueVal.innerHTML = this.value;
-		changeColor();
-	}
-
+		//when the value of the color slider is changed 
+		controller.colorSlider.oninput = function()
+		{
+			//change the calue of the label to match the slider
+			controller.colorVal.value = this.value;
+			//call the changeColor function
+			changeColor();
+		}
+	});
 
 }
 
