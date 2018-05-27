@@ -2,12 +2,12 @@
 		Initial variable creation
 -----------------------------------------------*/
 
-const red = document.getElementById("red")
-var redVal = document.getElementById('red-text')
-const green = document.getElementById("green")
-var greenVal = document.getElementById('green-val')
-const blue = document.getElementById("blue")
-var blueVal = document.getElementById('blue-val')
+const red = document.getElementById("red");
+var redVal = document.getElementById('red-val');
+const green = document.getElementById("green");
+var greenVal = document.getElementById('green-val');
+const blue = document.getElementById("blue");
+var blueVal = document.getElementById('blue-val');
 //calls the init function
 init()
 
@@ -21,8 +21,8 @@ function init(){
 	changeColor();
 	//sets the value of the labels for the colors
 	redVal.value = red.value;
-	greenVal.innerHTML = green.value;
-	blueVal.innerHTML = blue.value;
+	greenVal.value = green.value;
+	blueVal.value = blue.value;
 
 	//creates a collection of objects to hold the color controller
 	const colorController = [
@@ -53,6 +53,17 @@ function init(){
 			//call the changeColor function
 			changeColor();
 		}
+
+		//when the value is changed on the color input
+		controller.colorVal.oninput = function()
+		{
+			//change the slider to match the input value
+			controller.colorSlider.value = this.value;
+			//call the changeColor function
+			changeColor();
+		}
+
+
 	});
 
 }
@@ -63,6 +74,7 @@ function init(){
 //output: Null
 function setRandomColors()
 {
+	//sets the value of the colors to a random whole number between 0 and 255
 	red.value = Math.floor(Math.random()*255);
 	green.value = Math.floor(Math.random()*255);
 	blue.value = Math.floor(Math.random()*255);
