@@ -2,19 +2,34 @@
 <html>
 <head>
 	<title>Color Picker</title>
-	<link rel="stylesheet" type="text/css" href="assets/index.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/index.css">
 </head>
 <body>
-	<label for="red">R</label>
-	<input type="text" name="red-text" id="red-val">
-	<input type="range" min="0" max="255" value="255" name="red" id="red">
-	<label for="green">G</label>
-	<input type="text" name="green-text" id="green-val">
-	<input type="range" min="0" max="255" value="255" name="green" id="green">
-	<label for="blue">B</label>
-	<input type="text" name="blue-text" id="blue-val">
-	<input type="range" min="0" max="255" value="255" name="blue" id="blue">
+	<header>
+		<nav>test</nav>
+	</header>
+	<div class="container">
+		<div class="jumbotron"></div>
+		<div class="color-group">
+			<div class="input-group">
+				<label for="red">R </label>
+				<input type="text" name="red-text" id="red-val">
+				<input type="range" min="0" max="255" value="255" name="red" id="red">
+			</div>
+			<div class="input-group">
+				<label for="green">G </label>
+				<input type="text" name="green-text" id="green-val">
+				<input type="range" min="0" max="255" value="255" name="green" id="green">
+			</div>
+			<div class="input-group">
+				<label for="blue">B </label>
+				<input type="text" name="blue-text" id="blue-val">
+				<input type="range" min="0" max="255" value="255" name="blue" id="blue">
+			</div>
+		</div>
+	</div>
+
 
 	<script type="text/javascript" src="assets/index.js"></script>
 </body>

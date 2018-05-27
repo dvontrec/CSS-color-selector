@@ -1,3 +1,35 @@
 body{
 	color: black;
 }
+header{
+	color: white;
+	background-color: black;
+	padding: auto;
+	margin-bottom: 5px;
+}
+
+.color-group{
+	display: flex;
+	flex-direction: column;
+	padding-top: 25vh;
+}
+
+.input-group{
+	display: flex;
+	flex-direction: row;
+	padding-bottom: 15px;
+}
+
+.input-group label{
+	margin-right: 20px;
+	text-align: center;
+}
+
+.input-group input[type=text]{
+	max-width: 40px;
+	margin-right: 20px;
+}
+
+.input-group input[type=range]{
+	flex-grow: 1;
+}
