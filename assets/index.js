@@ -11,6 +11,8 @@ var blueVal = document.getElementById('blue-val');
 const alpha = document.getElementById("alpha");
 var alphaVal = document.getElementById('alpha-val');
 var colorText = document.getElementById('rgba-text');
+const changeButton = document.getElementById('change');
+const copyButton = document.getElementById('copy');
 //calls the init function
 init()
 
@@ -20,13 +22,6 @@ init()
 function init(){
 	//calls the setRandomColors function
 	setRandomColors();
-	//calls the changeColor function
-	changeColor();
-	//sets the value of the labels for the colors
-	redVal.value = red.value;
-	greenVal.value = green.value;
-	blueVal.value = blue.value;
-	alphaVal.value = alpha.value;
 
 	//creates a collection of objects to hold the color controller
 	const colorController = [
@@ -74,6 +69,29 @@ function init(){
 
 	});
 
+	//when the change color button is pressed, call the setRandomColors function
+	changeButton.onclick = setRandomColors
+
+	//when the copy button is pressed
+	copyButton.onclick = function()
+	{
+		//forces the computer to call the copy command, same as right clicking and copying
+		document.execCommand('copy');
+	}
+
+	//tells the webpage to listen for when the copy command is called
+	document.addEventListener('copy', function(event)
+	{
+		//prevents the normal copy functoin from working
+		event.preventDefault();
+		//if the machine is capable of copying
+		if (event.clipboardData) 
+		{
+			//sets the data on the clipboard to match the rgba value of the colorText text
+		  event.clipboardData.setData("text/plain", colorText.innerHTML);
+		}
+	});
+
 }
 
 
@@ -87,6 +105,14 @@ function setRandomColors()
 	green.value = Math.floor(Math.random()*255);
 	blue.value = Math.floor(Math.random()*255);
 	alpha.value = Math.floor(Math.random()*100);
+
+	//calls the changeColor function
+	changeColor();
+	//sets the value of the labels for the colors
+	redVal.value = red.value;
+	greenVal.value = green.value;
+	blueVal.value = blue.value;
+	alphaVal.value = alpha.value;
 }
 
 //Function used to change the color of the background
@@ -120,7 +146,7 @@ function changeColor()
 		document.body.style.color = "black";
 	}
 
-	colorText.innerHTML = `rgb(${r}, ${g}, ${b}, ${a})`
+	colorText.innerHTML = `rgba(${r}, ${g}, ${b}, ${a})`
 
 
 }
