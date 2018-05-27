@@ -8,6 +8,8 @@ const green = document.getElementById("green");
 var greenVal = document.getElementById('green-val');
 const blue = document.getElementById("blue");
 var blueVal = document.getElementById('blue-val');
+const alpha = document.getElementById("alpha");
+var alphaVal = document.getElementById('alpha-val');
 //calls the init function
 init()
 
@@ -23,6 +25,7 @@ function init(){
 	redVal.value = red.value;
 	greenVal.value = green.value;
 	blueVal.value = blue.value;
+	alphaVal.value = alpha.value;
 
 	//creates a collection of objects to hold the color controller
 	const colorController = [
@@ -39,6 +42,10 @@ function init(){
 		{
 			colorSlider: blue,
 			colorVal: blueVal
+		},
+		{
+			colorSlider: alpha,
+			colorVal: alphaVal
 		}
 	]
 
@@ -78,6 +85,7 @@ function setRandomColors()
 	red.value = Math.floor(Math.random()*255);
 	green.value = Math.floor(Math.random()*255);
 	blue.value = Math.floor(Math.random()*255);
+	alpha.value = Math.floor(Math.random()*100);
 }
 
 //Function used to change the color of the background
@@ -89,19 +97,25 @@ function changeColor()
 	var r = parseInt(red.value);
 	var g = parseInt(green.value);
 	var b = parseInt(blue.value);
+	var a = alpha.value /100
 	//finds the average of the colors
 	var avgColor = (r+g+b) / 3;
 
 	//changes the background color of the body to match the RGB values
-	document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
+	document.body.style.backgroundColor = `rgb(${r},${g},${b},${a})`;
 
-	//if the background is light change the text color to black
-	if(avgColor < 140)
+	//if the background alpha is over 55 te text can be set to white
+	if(a > .55)
 	{
-		document.body.style.color = "white";
+		//if the background is light change the text color to white
+		if(avgColor < 140)
+		{
+			document.body.style.color = "white";
+		}
 	}
-	//if the background is dark change the text color to white
+	//if the background is dark change the text color to black
 	else{document.body.style.color = "black";}
+
 
 }
 
