@@ -8,6 +8,11 @@ header{
 	margin-bottom: 5px;
 }
 
+.jumbotron{
+	text-align: center;
+	color: black;
+}
+
 .color-group{
 	display: flex;
 	flex-direction: column;

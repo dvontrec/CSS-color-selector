@@ -10,6 +10,7 @@ const blue = document.getElementById("blue");
 var blueVal = document.getElementById('blue-val');
 const alpha = document.getElementById("alpha");
 var alphaVal = document.getElementById('alpha-val');
+var colorText = document.getElementById('rgba-text');
 //calls the init function
 init()
 
@@ -114,7 +115,12 @@ function changeColor()
 		}
 	}
 	//if the background is dark change the text color to black
-	else{document.body.style.color = "black";}
+	else
+	{
+		document.body.style.color = "black";
+	}
+
+	colorText.innerHTML = `rgb(${r}, ${g}, ${b}, ${a})`
 
 
 }
