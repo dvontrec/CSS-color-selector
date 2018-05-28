@@ -1,6 +1,5 @@
 Web App for selecting CSS colors based on rgba values
 
 ******************************************************
-						SEE DEMO
+						[SEE DEMO][https://dvontrec.github.io/CSS-color-selector/]
 ******************************************************
-	https://dvontrec.github.io/CSS-color-selector/
