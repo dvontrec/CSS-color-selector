@@ -8,6 +8,14 @@ header{
 	margin-bottom: 5px;
 }
 
+.navbar a {
+	color: white;
+}
+
+.navbar-right a{
+	margin-left: 15px;
+}
+
 .jumbotron{
 	text-align: center;
 	color: black;
@@ -16,7 +24,7 @@ header{
 .color-group{
 	display: flex;
 	flex-direction: column;
-	padding-top: 25vh;
+	padding-bottom: 25vh;
 }
 
 .input-group{
