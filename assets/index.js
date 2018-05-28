@@ -129,7 +129,7 @@ function changeColor()
 	var avgColor = (r+g+b) / 3;
 
 	//changes the background color of the body to match the RGB values
-	document.body.style.backgroundColor = `rgb(${r},${g},${b},${a})`;
+	document.body.style.backgroundColor = `rgba(${r},${g},${b},${a})`;
 
 	//if the background alpha is over 55 te text can be set to white
 	if(a > .55)
