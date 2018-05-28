@@ -78,6 +78,9 @@ header{
 	flex-direction: column;
 	padding-bottom: 25vh;
 }
+.color-group label{
+	width: 100px;
+}
 
 .input-group{
 	display: flex;

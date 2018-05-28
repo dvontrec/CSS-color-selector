@@ -124,7 +124,7 @@ function changeColor()
 	var r = parseInt(red.value);
 	var g = parseInt(green.value);
 	var b = parseInt(blue.value);
-	var a = alpha.value /100
+	var a = (alpha.value /100).toFixed(2)
 	//finds the average of the colors
 	var avgColor = (r+g+b) / 3;
 
