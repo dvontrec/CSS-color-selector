@@ -104,7 +104,8 @@ function setRandomColors()
 	red.value = Math.floor(Math.random()*255);
 	green.value = Math.floor(Math.random()*255);
 	blue.value = Math.floor(Math.random()*255);
-	alpha.value = Math.floor(Math.random()*100);
+	//sets alpha value to stay at 1 when random color is created
+	alpha.value = 1;
 
 	//calls the changeColor function
 	changeColor();
