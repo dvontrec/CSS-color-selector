@@ -140,6 +140,10 @@ function changeColor()
 		{
 			document.body.style.color = "white";
 		}
+		else
+		{
+			document.body.style.color = "black";
+		}
 	}
 	//if the background is dark change the text color to black
 	else
