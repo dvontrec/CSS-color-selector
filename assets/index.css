@@ -60,6 +60,14 @@ header{
 	margin-bottom: 5px;
 }
 
+.container {
+	margin-top: 40px;
+	border: 2px solid #fff;
+	border-radius: .3em;
+	padding: 20px;
+	shaddow: 
+}
+
 .navbar a {
 	color: white;
 }
@@ -70,13 +78,23 @@ header{
 
 .jumbotron{
 	text-align: center;
-	color: black;
+	color: white;
+	background-color: #000;
+	/*background: linear-gradient(darkslategrey, lightslategrey);*/
+}
+button {
+	background-color: #000;
+	border-radius: .3em;
+	color: white;
+	font-size: 20px;
+	padding: 5px;
+	width: 135px;
+	 
 }
 
-.color-group{
+.color-group {
 	display: flex;
 	flex-direction: column;
-	padding-bottom: 25vh;
 }
 .color-group label{
 	width: 100px;
@@ -94,8 +112,12 @@ header{
 }
 
 .input-group input[type=text]{
-	width: 50px;
+	text-align: center;
+	width: 45px;
 	margin-right: 20px;
+	border: 2px solid #000;
+	border-radius: .3em;
+	padding: 3px;
 }
 
 .input-group input[type=range]{
