@@ -1,5 +1,6 @@
 body{
 	color: black;
+	min-height: 100vh;
 }
 header{
 	color: white;
@@ -9,12 +10,14 @@ header{
 }
 
 footer{
-	padding: auto;
+	position: fixed;
 	height: 30px;
-	background-color: #e9ecef;
-	color: black;
-	margin: 0;
+	background-color: #000;
+	color: #e9ecef;
 	text-align: center;
+	width: 100%;
+	left: 0;
+	bottom: 0;
 }
 
 footer p{
@@ -23,19 +26,11 @@ footer p{
 }
 
 footer p span a{
-	color: black;
+	color: #e9ecef;
 }
 
 footer p span a:hover{
 	text-decoration: none;
-}
-
-.container {
-	margin-top: 40px;
-	border: 2px solid #fff;
-	border-radius: .3em;
-	padding: 20px;
-	shaddow: 
 }
 
 .navbar a {
@@ -45,6 +40,18 @@ footer p span a:hover{
 
 .navbar a:hover{
 	opacity: 1;
+}
+
+.container {
+	margin-top: 40px;
+	border: 2px solid #fff;
+	border-radius: .3em;
+	padding: 20px;
+}
+
+.navbar a {
+	color: white;
+
 }
 
 .navbar-right a{
@@ -60,8 +67,8 @@ footer p span a:hover{
 	text-align: center;
 	color: white;
 	background-color: #000;
-	/*background: linear-gradient(darkslategrey, lightslategrey);*/
 }
+
 button {
 	background-color: #000;
 	border-radius: .3em;
@@ -75,6 +82,7 @@ button {
 .color-group {
 	display: flex;
 	flex-direction: column;
+	padding-bottom: auto;
 }
 
 .color-group label{
