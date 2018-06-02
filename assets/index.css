@@ -79,6 +79,10 @@ button {
 	 
 }
 
+button:focus {
+	outline: 0;
+}
+
 .color-group {
 	display: flex;
 	flex-direction: column;
