@@ -1,5 +1,6 @@
 body{
 	color: black;
+	min-height: 100vh;
 }
 header{
 	color: white;
@@ -9,12 +10,14 @@ header{
 }
 
 footer{
-	padding: auto;
+	position: fixed;
 	height: 30px;
 	background-color: #000;
 	color: #e9ecef;
-	margin: 0;
 	text-align: center;
+	width: 100%;
+	left: 0;
+	bottom: 0;
 }
 
 footer p{
@@ -64,8 +67,8 @@ footer p span a:hover{
 	text-align: center;
 	color: white;
 	background-color: #000;
-	/*background: linear-gradient(darkslategrey, lightslategrey);*/
 }
+
 button {
 	background-color: #000;
 	border-radius: .3em;
@@ -79,6 +82,7 @@ button {
 .color-group {
 	display: flex;
 	flex-direction: column;
+	padding-bottom: auto;
 }
 
 .color-group label{
