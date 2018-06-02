@@ -11,8 +11,8 @@ header{
 footer{
 	padding: auto;
 	height: 30px;
-	background-color: #e9ecef;
-	color: black;
+	background-color: #000;
+	color: #e9ecef;
 	margin: 0;
 	text-align: center;
 }
@@ -23,7 +23,7 @@ footer p{
 }
 
 footer p span a{
-	color: black;
+	color: #e9ecef;
 }
 
 footer p span a:hover{
