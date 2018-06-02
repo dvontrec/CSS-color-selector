@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/index.css">
 </head>
 <body>
+	<!-- Nav Bar -->
 	<header>
 		<nav class="navbar">
 			<a href="#" class="navbar-brand">RGBA Selector</a>
@@ -18,37 +19,56 @@
 			</div>
 		</nav>
 	</header>
+	<!-- Container to hold all elements in the page -->
 	<div class="container">
+		<!-- Jumbotron to show the values -->
 		<div class="jumbotron">
 			<h4 id="rgba-text"></h4>
 			<button id="copy">Copy Color</button>
 			<button id="change">Change Color</button>
 		</div>
+		<!-- Div to hold each color groups for control -->
 		<div class="color-group">
+			<!-- Red group -->
 			<div class="input-group">
 				<label for="red">Red </label>
-				<input type="text" tabindex="0" name="red-text" id="red-val">
+				<input type="text" tabindex="1" name="red-text" id="red-val">
 				<input type="range" min="0" max="255" value="255" name="red" id="red">
 			</div>
+			<!-- Green group -->
 			<div class="input-group">
 				<label for="green">Green </label>
-				<input type="text" tabindex="1" name="green-text" id="green-val">
+				<input type="text" tabindex="2" name="green-text" id="green-val">
 				<input type="range" min="0" max="255" value="255" name="green" id="green">
 			</div>
+			<!-- Blue group -->
 			<div class="input-group">
 				<label for="blue">Blue </label>
-				<input type="text" name="blue-text" id="blue-val">
+				<input type="text" tabindex="3" name="blue-text" id="blue-val">
 				<input type="range" min="0" max="255" value="255" name="blue" id="blue">
 			</div>
+			<!-- Alpha group -->
 			<div class="input-group">
 				<label for="alpha">Alpha/Opacity </label>
-				<input type="text" tabindex="2" name="alpha-text" id="alpha-val">
+				<input type="text" tabindex="4" name="alpha-text" id="alpha-val">
 				<input type="range" min="0" max="100" value="100" name="alpha" id="alpha">
 			</div>
 		</div>
 	</div>
+	<!-- Footer for the page bottom -->
+	<footer>
+		<p>Copyright 
+			<span>
+				<!-- Sets the year to the current year -->
+				<script type="text/javascript">
+					var d = new Date()
+					document.write(d.getFullYear())
+				</script>
+			</span><span><a href="#">Dvontrecoleman.com</a></span></p>
 
+	</footer>
 
+	
 	<script type="text/javascript" src="assets/index.js"></script>
 </body>
 </html>
