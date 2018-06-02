@@ -30,14 +30,6 @@ footer p span a:hover{
 	text-decoration: none;
 }
 
-.container {
-	margin-top: 40px;
-	border: 2px solid #fff;
-	border-radius: .3em;
-	padding: 20px;
-	shaddow: 
-}
-
 .navbar a {
 	color: white;
 	opacity: .9;
@@ -45,6 +37,18 @@ footer p span a:hover{
 
 .navbar a:hover{
 	opacity: 1;
+}
+
+.container {
+	margin-top: 40px;
+	border: 2px solid #fff;
+	border-radius: .3em;
+	padding: 20px;
+}
+
+.navbar a {
+	color: white;
+
 }
 
 .navbar-right a{
