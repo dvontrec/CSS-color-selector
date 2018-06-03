@@ -11,7 +11,7 @@ header{
 
 footer{
 	position: fixed;
-	height: 30px;
+	min-height: 30px;
 	background-color: #000;
 	color: #e9ecef;
 	text-align: center;
@@ -115,5 +115,27 @@ button:focus {
 
 .input-group input[type=range]{
 	flex-grow: 1;
+}
+
+#code-icon{
+	display: none;
+}
+
+/* creates a media query for smaller display items */
+@media (max-width: 500px)
+{
+	/* When on a mobile screen the code button will appear*/
+	#code-icon{
+		display: block;
+	}
+	/* The colab details information will dissapear */
+	.colab-details{
+		display: none;
+	}
+	.visable{
+		display: flex;
+		flex-direction: column;
+	}
+
 }
 
