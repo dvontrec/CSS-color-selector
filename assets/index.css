@@ -121,6 +121,10 @@ button:focus {
 	display: none;
 }
 
+.mobile-link{
+	display: none;
+}
+
 /* creates a media query for smaller display items */
 @media (max-width: 500px)
 {
@@ -135,6 +139,9 @@ button:focus {
 	.visable{
 		display: flex;
 		flex-direction: column;
+	}
+	.mobile-link{
+		display: inline-flex;
 	}
 
 }
