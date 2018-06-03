@@ -16,6 +16,10 @@ const copyButton = document.getElementById('copy');
 const codeButton = document.getElementById('code-icon');
 //gets an array of all items with the "colab details" class, since there is only one we want to store the 0 indedx
 const colabDetails  =document.getElementsByClassName('colab-details')[0];
+
+//finds the pallet boxes and stores them in an array
+const palletBoxes = document.getElementsByClassName('box');
+
 //calls the init function
 init()
 
@@ -97,6 +101,17 @@ function init(){
 
 	//adds event listener to code icon so when it is clicked the toggleColab function is called
 	codeButton.addEventListener('click', toggleColab);
+
+	//Converts the htmlcollection into an array containing each box and loops through them.  
+	Array.from(palletBoxes).forEach(function(box)
+	{
+		//adds a click event listener to each box
+		box.addEventListener('click', function()
+		{
+			//when the box is clicked set the background to be equal to the current body background color.  
+			box.style.backgroundColor = document.body.style.backgroundColor;
+		});
+	});
 
 }
 
