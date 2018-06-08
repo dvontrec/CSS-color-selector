@@ -20,6 +20,9 @@ const colabDetails  =document.getElementsByClassName('colab-details')[0];
 //finds the pallet boxes and stores them in an array
 const palletBoxes = document.getElementsByClassName('box');
 
+const contextMenu = document.getElementById('contextmenu');
+const menuItems = contextMenu.children;
+
 //calls the init function
 init()
 
@@ -72,8 +75,6 @@ function init(){
 			//call the changeColor function
 			changeColor();
 		}
-
-
 	});
 
 	//when the change color button is pressed, call the setRandomColors function
@@ -106,15 +107,69 @@ function init(){
 	Array.from(palletBoxes).forEach(function(box)
 	{
 		//adds a click event listener to each box
-		box.addEventListener('click', function()
+		box.addEventListener('contextmenu', function(event)
 		{
-			//when the box is clicked set the background to be equal to the current body background color.  
-			box.style.backgroundColor = document.body.style.backgroundColor;
+			event.preventDefault();
+			contextMenu.style.display = "block";
+			contextMenu.style.left = `${event.pageX}px`;
+			contextMenu.style.top = `${event.pageY}px`;
+
+			contextFunction(box);
+			hideContextMenu();
+
 		});
 	});
 
+
+
+
 }
 
+
+function contextFunction(box)
+{
+	//adds click event listeners to the menu items
+	menuItems[0].onclick = () => 
+	{
+		//when the box is clicked set the background to be equal to the current body background color.  
+		box.style.backgroundColor = document.body.style.backgroundColor;
+		//sets the rgb text to be saved as a property of the box object
+		box.rgb = colorText.innerHTML;
+		//sets the values for each color to be properties of the box.  
+		box.r = red.value;
+		box.g = green.value;
+		box.b = blue.value;
+		box.a = alpha.value;
+	}
+	menuItems[1].onclick = () => 
+	{
+		if(box.rgb)
+		{
+			//sets the color of the body to match the box background color
+			document.body.style.backgroundColor = box.style.backgroundColor;
+			//sets the rgba text to match the one stored in the box property
+			colorText.innerHTML = box.rgb;
+			//sets the valuse displayed to match the box properties
+			red.value = box.r;
+			redVal.value = red.value;
+			green.value = box.g;
+			greenVal.value = green.value;
+			blue.value = box.b;
+			blueVal.value = blue.value;
+			alpha.value = box.a;
+			alphaVal.value = alpha.value;
+		}
+	}
+}
+
+function hideContextMenu()
+{
+	document.onclick = () =>
+	{
+		contextMenu.style.display = 'none';
+		console.log('test')
+	}
+}
 
 //function used to set the values of each slider to generate a new color
 //input: Null

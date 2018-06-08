@@ -140,6 +140,26 @@ button:focus {
 	display: none;
 }
 
+#contextmenu{
+  display:none;
+  position: absolute;
+  background-color: white;
+  color: black;
+  width:150px;
+  left: 1103px;
+  top:250px;
+}
+
+#contextmenu li{
+	list-style: none;
+	text-align: center;
+}
+
+#contextmenu li:hover{
+	color: white;
+	background-color: rgb(40,20,150);
+}
+
 
 /* creates a media query for smaller display items */
 @media (max-width: 500px)
