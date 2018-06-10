@@ -140,6 +140,10 @@ button:focus {
 	display: none;
 }
 
+#show-pallett{
+	display: none;
+}
+
 #contextmenu{
   display:none;
   position: absolute;
@@ -182,6 +186,13 @@ button:focus {
 	/* sets the main display to fill the jumbotron */
 	.jumbotron .main{
 		width: 100%;
+	}
+	#copy{
+		display: none;
+	}
+
+	#show-pallett{
+		display: inline-block;
 	}
 	/* hides the color pallet for smaller screens*/
 	.jumbotron .pallet{
