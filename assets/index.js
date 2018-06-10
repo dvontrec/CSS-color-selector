@@ -13,6 +13,9 @@ var alphaVal = document.getElementById('alpha-val');
 var colorText = document.getElementById('rgba-text');
 const changeButton = document.getElementById('change');
 const copyButton = document.getElementById('copy');
+const codeButton = document.getElementById('code-icon');
+//gets an array of all items with the "colab details" class, since there is only one we want to store the 0 indedx
+const colabDetails  =document.getElementsByClassName('colab-details')[0];
 //calls the init function
 init()
 
@@ -92,6 +95,9 @@ function init(){
 		}
 	});
 
+	//adds event listener to code icon so when it is clicked the toggleColab function is called
+	codeButton.addEventListener('click', toggleColab);
+
 }
 
 
@@ -152,7 +158,24 @@ function changeColor()
 	}
 
 	colorText.innerHTML = `rgba(${r}, ${g}, ${b}, ${a})`
+}
 
+//function used to set the colab details to hidden or visable
+//input: Null
+//output: Null
+function toggleColab()
+{
+	//if the colab details are visable
+	if(colabDetails.classList.contains('visable'))
+	{
+		//removes visable from the class list making them dissappear from the page
+		colabDetails.classList.remove('visable');
+	}
+	else
+	{
+		//adds the visable class to the class list making the appear on the page
+		colabDetails.classList.add('visable');
+	}
 
 }
 

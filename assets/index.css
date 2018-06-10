@@ -1,63 +1,45 @@
-/*body{
+body{
 	color: black;
+	min-height: 100vh;
 }
 header{
 	color: white;
 	background-color: black;
 	padding: auto;
 	margin-bottom: 5px;
+}
+
+footer{
+	position: fixed;
+	min-height: 30px;
+	background-color: #000;
+	color: #e9ecef;
+	text-align: center;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+}
+
+footer p{
+	padding: auto;
+	margin-bottom: 0;
+}
+
+footer p span a{
+	color: #e9ecef;
+}
+
+footer p span a:hover{
+	text-decoration: none;
 }
 
 .navbar a {
 	color: white;
+	opacity: .9;
 }
 
-.navbar-right a{
-	margin-left: 15px;
-}
-
-.jumbotron{
-	text-align: center;
-	color: black;
-}
-
-.color-group{
-	display: flex;
-	flex-direction: column;
-	padding-bottom: 25vh;
-}
-
-.input-group{
-	display: flex;
-	flex-direction: row;
-	padding-bottom: 15px;
-}
-
-.input-group label{
-	margin-right: 20px;
-	text-align: center;
-}
-
-.input-group input[type=text]{
-	max-width: 40px;
-	margin-right: 20px;
-}
-
-.input-group input[type=range]{
-	flex-grow: 1;
-}*/
-
-/***************************************
-			Fixed with auto prefixer
-***************************************/
-body{
-	color: black;
-}
-header{
-	color: white;
-	background-color: black;
-	padding: auto;
-	margin-bottom: 5px;
+.navbar a:hover{
+	opacity: 1;
 }
 
 .container {
@@ -69,18 +51,24 @@ header{
 
 .navbar a {
 	color: white;
+
 }
 
 .navbar-right a{
 	margin-left: 15px;
+	opacity: .9;
+}
+
+.navbar-right a:hover{
+	opacity: 1;
 }
 
 .jumbotron{
 	text-align: center;
 	color: white;
 	background-color: #000;
-	/*background: linear-gradient(darkslategrey, lightslategrey);*/
 }
+
 button {
 	background-color: #000;
 	border-radius: .3em;
@@ -91,10 +79,16 @@ button {
 	 
 }
 
+button:focus {
+	outline: 0;
+}
+
 .color-group {
 	display: flex;
 	flex-direction: column;
+	padding-bottom: auto;
 }
+
 .color-group label{
 	width: 100px;
 }
@@ -122,6 +116,7 @@ button {
 .input-group input[type=range]{
 	flex-grow: 1;
 }
+
 
 /* The input styling here is mostly taken from https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/ and modified 
 to suit the style of this site.*/
@@ -229,3 +224,27 @@ input[type=range]::-webkit-slider-thumb {
   input[type=range]:focus::-ms-fill-upper {
 	background: #fff;
   }
+
+#code-icon{
+	display: none;
+}
+
+/* creates a media query for smaller display items */
+@media (max-width: 500px)
+{
+	/* When on a mobile screen the code button will appear*/
+	#code-icon{
+		display: block;
+	}
+	/* The colab details information will dissapear */
+	.colab-details{
+		display: none;
+	}
+	.visable{
+		display: flex;
+		flex-direction: column;
+	}
+
+}
+
+
