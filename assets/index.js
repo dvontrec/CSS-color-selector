@@ -14,8 +14,18 @@ var colorText = document.getElementById('rgba-text');
 const changeButton = document.getElementById('change');
 const copyButton = document.getElementById('copy');
 const codeButton = document.getElementById('code-icon');
+const palletButton = document.getElementById('show-pallett');
+const mainDisplay = document.getElementById('main');
+const pallettDisplay = document.getElementById('pallett');
 //gets an array of all items with the "colab details" class, since there is only one we want to store the 0 indedx
 const colabDetails  =document.getElementsByClassName('colab-details')[0];
+
+//finds the pallet boxes and stores them in an array
+const palletBoxes = document.getElementsByClassName('box');
+
+const contextMenu = document.getElementById('contextmenu');
+const menuItems = contextMenu.children;
+
 //calls the init function
 init()
 
@@ -68,8 +78,6 @@ function init(){
 			//call the changeColor function
 			changeColor();
 		}
-
-
 	});
 
 	//when the change color button is pressed, call the setRandomColors function
@@ -80,6 +88,15 @@ function init(){
 	{
 		//forces the computer to call the copy command, same as right clicking and copying
 		document.execCommand('copy');
+	}
+
+	palletButton.onclick = function()
+	{
+		mainDisplay.style.display = 'none';
+		pallettDisplay.style.display = 'flex'; 
+		pallettDisplay.style.width = '100%'; 
+		pallettDisplay.style.height = '100%'; 
+
 	}
 
 	//tells the webpage to listen for when the copy command is called
@@ -98,8 +115,73 @@ function init(){
 	//adds event listener to code icon so when it is clicked the toggleColab function is called
 	codeButton.addEventListener('click', toggleColab);
 
+	//Converts the htmlcollection into an array containing each box and loops through them.  
+	Array.from(palletBoxes).forEach(function(box)
+	{
+		//adds a click event listener to each box
+		box.addEventListener('contextmenu', function(event)
+		{
+			event.preventDefault();
+			contextMenu.style.display = "block";
+			contextMenu.style.left = `${event.pageX}px`;
+			contextMenu.style.top = `${event.pageY}px`;
+
+			contextFunction(box);
+			hideContextMenu();
+
+		});
+	});
+
+
+
+
 }
 
+
+function contextFunction(box)
+{
+	//adds click event listeners to the menu items
+	menuItems[0].onclick = () => 
+	{
+		//when the box is clicked set the background to be equal to the current body background color.  
+		box.style.backgroundColor = document.body.style.backgroundColor;
+		//sets the rgb text to be saved as a property of the box object
+		box.rgb = colorText.innerHTML;
+		//sets the values for each color to be properties of the box.  
+		box.r = red.value;
+		box.g = green.value;
+		box.b = blue.value;
+		box.a = alpha.value;
+	}
+	menuItems[1].onclick = () => 
+	{
+		if(box.rgb)
+		{
+			//sets the color of the body to match the box background color
+			document.body.style.backgroundColor = box.style.backgroundColor;
+			//sets the rgba text to match the one stored in the box property
+			colorText.innerHTML = box.rgb;
+			//sets the valuse displayed to match the box properties
+			red.value = box.r;
+			redVal.value = red.value;
+			green.value = box.g;
+			greenVal.value = green.value;
+			blue.value = box.b;
+			blueVal.value = blue.value;
+			alpha.value = box.a;
+			alphaVal.value = alpha.value;
+		}
+	}
+}
+
+function hideContextMenu()
+{
+	document.onclick = () =>
+	{
+		contextMenu.style.display = 'none';
+		console.log('test')
+	}
+}
 
 //function used to set the values of each slider to generate a new color
 //input: Null
