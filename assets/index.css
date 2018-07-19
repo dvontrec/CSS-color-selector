@@ -70,12 +70,12 @@ footer p span a:hover{
 	background-color: #000;
 }
 
-.jumbotron .main{
+.jumbotron #main{
 	width: 75%;
 	text-align: center;
 }
 
-.jumbotron .pallet{
+.jumbotron #pallett{
 	width: 25%;
 	display: flex;
 	flex-direction: row;
@@ -83,8 +83,9 @@ footer p span a:hover{
 }
 
 /* sets the size of the boxes to be 1/3 of the pallet */
-.jumbotron .pallet .box{
+.jumbotron #pallett .box{
 	width: 33%;
+	min-height: 78px;
 	border: 1px solid #fff;
 }
 
@@ -184,7 +185,7 @@ button:focus {
 @media (max-width: 1000px)
 {
 	/* sets the main display to fill the jumbotron */
-	.jumbotron .main{
+	.jumbotron #main{
 		width: 100%;
 	}
 	#copy{
@@ -195,7 +196,7 @@ button:focus {
 		display: inline-block;
 	}
 	/* hides the color pallet for smaller screens*/
-	.jumbotron .pallet{
+	.jumbotron #pallett{
 		display: none;
 	}
 }

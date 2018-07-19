@@ -14,6 +14,9 @@ var colorText = document.getElementById('rgba-text');
 const changeButton = document.getElementById('change');
 const copyButton = document.getElementById('copy');
 const codeButton = document.getElementById('code-icon');
+const palletButton = document.getElementById('show-pallett');
+const mainDisplay = document.getElementById('main');
+const pallettDisplay = document.getElementById('pallett');
 //gets an array of all items with the "colab details" class, since there is only one we want to store the 0 indedx
 const colabDetails  =document.getElementsByClassName('colab-details')[0];
 
@@ -85,6 +88,15 @@ function init(){
 	{
 		//forces the computer to call the copy command, same as right clicking and copying
 		document.execCommand('copy');
+	}
+
+	palletButton.onclick = function()
+	{
+		mainDisplay.style.display = 'none';
+		pallettDisplay.style.display = 'flex'; 
+		pallettDisplay.style.width = '100%'; 
+		pallettDisplay.style.height = '100%'; 
+
 	}
 
 	//tells the webpage to listen for when the copy command is called
